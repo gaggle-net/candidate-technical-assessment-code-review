@@ -1,5 +1,6 @@
-package com.gaggle.contact.controllers;
+package com.gaggle.contact.controllers.advice;
 
+import com.gaggle.contact.controllers.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -13,7 +14,7 @@ public class MissingServletRequestParameterAdvice {
     @ResponseBody
     @ExceptionHandler(MissingServletRequestParameterException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    ErrorResponse contactNotFoundHandler(final MissingServletRequestParameterException ex) {
+    ErrorResponse missingServletRequestParameterExceptionHandler(final MissingServletRequestParameterException ex) {
         return new ErrorResponse(ex.getMessage());
     }
 }

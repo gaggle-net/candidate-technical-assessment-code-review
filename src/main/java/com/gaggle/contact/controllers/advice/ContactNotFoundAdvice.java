@@ -1,5 +1,7 @@
-package com.gaggle.contact.controllers;
+package com.gaggle.contact.controllers.advice;
 
+import com.gaggle.contact.controllers.ContactNotFoundException;
+import com.gaggle.contact.controllers.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -12,7 +14,7 @@ public class ContactNotFoundAdvice {
     @ResponseBody
     @ExceptionHandler(ContactNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    ErrorResponse contactNotFoundHandler(final ContactNotFoundException ex) {
+    ErrorResponse contactNotFoundExceptionHandler(final ContactNotFoundException ex) {
         return new ErrorResponse(ex.getMessage());
     }
 }
