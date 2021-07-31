@@ -19,12 +19,12 @@ class LoadDatabase {
     @Bean
     CommandLineRunner initDatabase(final ContactRepository repository) {
         return args -> {
-            logger.info("Preloading " + repository.save(new Contact("Bruce Wayne")));
-            logger.info("Preloading " + repository.save(new Contact("Dick Grayson")));
-            logger.info("Preloading " + repository.save(new Contact("Jason Todd")));
-            logger.info("Preloading " + repository.save(new Contact("Selina Kyle")));
-            logger.info("Preloading " + repository.save(new Contact("Oswald Cobblepot")));
-            logger.info("Preloading " + repository.save(new Contact("Edward Nygma")));
+            logger.info("Preloading " + repository.save(new Contact("Bruce Wayne", "bwayne@gothamcity.com")));
+            logger.info("Preloading " + repository.save(new Contact("Dick Grayson", "dgrayson@gothamcity.com")));
+            logger.info("Preloading " + repository.save(new Contact("Jason Todd", "jtodd@gothamcity.com")));
+            logger.info("Preloading " + repository.save(new Contact("Selina Kyle", "skyle@gothamcity.com")));
+            logger.info("Preloading " + repository.save(new Contact("Oswald Cobblepot", "ocobblepot@gothamcity.com")));
+            logger.info("Preloading " + repository.save(new Contact("Edward Nygma", "enygma@gothamcity.com")));
         };
     }
 }
