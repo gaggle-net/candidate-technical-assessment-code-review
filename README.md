@@ -5,7 +5,17 @@ This exercise is meant to showcase your technical abilities by conducting a code
 * There will be a number of things we are looking for, but this process is not meant to be stressful.
 
 # Application
-This application is a Web Service responsible for providing contact information from our contact database. The application is a proof of concept and is currently using an embedded database that inserts default data on startup. 
+This application is a Web Service responsible for providing contact information from our contact database. The application is a proof of concept and is currently using an embedded database that inserts default data on startup.
+
+## Default Contact Data
+| id | name |
+| --- | --- |
+| 1 | Bruce Wayne |
+| 2 | Dick Grayson |
+| 3 | Jason Todd |
+| 4 | Selina Kyle |
+| 5 | Oswald Cobblepot |
+| 6 | Edward Nygma |
 
 # Features
 | Feature | Description | Endpoint |
