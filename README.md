@@ -10,5 +10,5 @@ This application is a Web Service responsible for providing contact information 
 # Features
 | Feature | Description | Endpoint |
 | --- | --- | --- |
-| Search By Id  | Retrieve a specific contact by referencing it's unique identifier. | /contacts/_{id}_ |
-| Search By Name  | Retrieve one or more contacts by searching by name (full or partial).  | /contacts?name=_{name}_ |
+| Search By Id  | Retrieve a specific contact by referencing it's unique identifier. | /api/contacts/_{id}_ |
+| Search By Name  | Retrieve one or more contacts by searching by name (full or partial).  | /api/contacts?name=_{name}_ |
