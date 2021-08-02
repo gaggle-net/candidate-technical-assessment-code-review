@@ -60,7 +60,7 @@ Content-Type: application/json
 Transfer-Encoding: chunked
 Date: Sat, 31 Jul 2021 20:02:24 GMT
 
-[{"id":1,"name":"Bruce Wayne"}]%
+[{"id":1,"name":"Bruce Wayne"}]
 ```
 Search for a contact with an invalid id.
 ```shell
@@ -70,7 +70,7 @@ Content-Type: application/json
 Transfer-Encoding: chunked
 Date: Sat, 31 Jul 2021 20:03:55 GMT
 
-{"error":"No contact found with id = 99999","timestamp":"2021-07-31T20:03:55.860+00:00"}%
+{"error":"No contact found with id = 99999","timestamp":"2021-07-31T20:03:55.860+00:00"}
 ```
 Search for a contact with a name that doesn't exist.
 ```shell
