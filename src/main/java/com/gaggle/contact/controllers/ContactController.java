@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Endpoint for interacting with Contacts.
@@ -42,6 +44,20 @@ public class ContactController {
 
         return repository.findByNameContainingIgnoreCase(name)
                 .orElseThrow(() -> new ContactNotFoundException(name));
+    }
+
+    @GetMapping("/query")
+    public List<Contact> getByEmail(@RequestParam final String email) {
+        if (Objects.isNull(email) || !email.contains("@")) {
+            throw new RuntimeException("email is no good, try again silly");
+        }
+
+        Optional<List<Contact>> contacts = repository.findByEmailContaining(email);
+        if (contacts.get().isEmpty()) {
+            throw new RuntimeException(String.format("no contacts with email [%s] found.", email));
+        }
+
+        return contacts.get();
     }
 
     /**
