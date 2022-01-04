@@ -14,11 +14,13 @@ public class Contact {
 
     private @Id @GeneratedValue Long id;
     private @NotBlank String name;
+    private String email;
 
     public Contact() {}
 
-    public Contact(final String name) {
+    public Contact(final String name, final String email) {
         this.name = name;
+        this.email = email;
     }
 
     public Long getId() {
@@ -37,6 +39,14 @@ public class Contact {
         this.name = name;
     }
 
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -45,12 +55,13 @@ public class Contact {
             return false;
         Contact contact = (Contact) o;
         return Objects.equals(this.id, contact.id) &&
-                Objects.equals(this.name, contact.name);
+                Objects.equals(this.name, contact.name) &&
+                Objects.equals(this.name, contact.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.id, this.name);
+        return Objects.hash(this.id, this.name, this.email);
     }
 
     @Override
